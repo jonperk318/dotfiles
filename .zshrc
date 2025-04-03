@@ -112,6 +112,7 @@ source $ZSH/oh-my-zsh.sh
 alias f='fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim'
 alias l='ls -alh'
 alias goe='sudo docker run --gpus all -v /home/jonperk/Documents/goe-test/goe-main:/opt/goe -v /home/jonperk/Documents/goe-test/goe-main/jp-goe-data:/opt/goe-data --network host -it goe:latest'
+alias dotfiles=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
