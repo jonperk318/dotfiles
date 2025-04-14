@@ -29,7 +29,7 @@ return {
                 "lua_ls",
                 "pyright",
                 "eslint",
-                "ts_ls",
+                "tailwindcss",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
