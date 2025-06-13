@@ -110,11 +110,16 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 alias f='fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim'
 alias l='ls -alh'
+alias c='clear'
 alias goe='sudo docker run --gpus all -v /home/jonperk/Documents/goe-test/goe-main:/opt/goe -v /home/jonperk/Documents/goe-test/goe-main/jp-goe-data:/opt/goe-data --network host -it goe:latest'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim .'
+alias n='npm'
+alias pn='pnpm'
+alias g='git'
+alias d='docker'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
