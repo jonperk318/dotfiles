@@ -115,6 +115,10 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim .'
+alias n='npm'
+alias pn='pnpm'
+alias g='git'
+alias d='docker'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
