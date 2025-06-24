@@ -27,9 +27,11 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
-                "pylsp",
+                "pyright",
                 "eslint",
+                "html",
                 "tailwindcss",
+                "rust-analyzer",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
