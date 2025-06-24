@@ -31,7 +31,6 @@ return {
                 "eslint",
                 "html",
                 "tailwindcss",
-                "rust-analyzer",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
