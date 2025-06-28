@@ -29,8 +29,10 @@ return {
                 "lua_ls",
                 "pyright",
                 "eslint",
+                "ts_ls",
                 "html",
                 "tailwindcss",
+                "clangd",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -52,6 +54,19 @@ return {
                             }
                         }
                     }
+                end,
+                ["volar"] = function()
+                  require("lspconfig").volar.setup({
+                    filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+                    init_options = {
+                      vue = {
+                        hybridMode = false,
+                      },
+                      typescript = {
+                        tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+                      },
+                    },
+                  })
                 end,
             }
         })
@@ -79,7 +94,8 @@ return {
         })
 
         vim.diagnostic.config({
-            -- update_in_insert = true,
+            update_in_insert = true,
+            virtual_text = true,
             float = {
                 focusable = false,
                 style = "minimal",
