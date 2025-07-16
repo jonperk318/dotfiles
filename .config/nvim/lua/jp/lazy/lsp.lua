@@ -105,5 +105,7 @@ return {
                 prefix = "",
             },
         })
+        vim.o.updatetime = 500
+        vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
     end
 }
