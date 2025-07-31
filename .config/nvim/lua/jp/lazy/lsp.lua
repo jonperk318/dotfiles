@@ -30,45 +30,42 @@ return {
                 "pyright",
                 "eslint",
                 "ts_ls",
+                "volar",
                 "html",
                 "tailwindcss",
                 "clangd",
             },
-            handlers = {
-                function(server_name) -- default handler (optional)
+            automatic_enable = true, -- Mason-LSPConfig v2 auto-enables servers by default
+        })
 
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
-                end,
-
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
-                    }
-                end,
-                ["volar"] = function()
-                  require("lspconfig").volar.setup({
-                    filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
-                    init_options = {
-                      vue = {
-                        hybridMode = false,
-                      },
-                      typescript = {
-                        tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
-                      },
+        vim.lsp.config('*', {
+            -- any custom settings for all servers
+        })
+        vim.lsp.config('lua_ls', {
+            settings = {
+                Lua = {
+                    runtime = { version = 'Lua 5.1' },
+                    diagnostics = {
+                        globals = { 'bit', 'vim', 'it', 'describe', 'before_each', 'after_each' },
                     },
-                  })
-                end,
-            }
+                },
+            },
+        })
+
+        -- vue being annoying
+        local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
+        local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server"
+        require("lspconfig").ts_ls.setup({
+          init_options = {
+            plugins = {
+              {
+                name = "@vue/typescript-plugin",
+                location = vue_plugin_path,
+                languages = { "vue" },
+              },
+            },
+          },
+          filetypes = { "typescript", "javascript", "vue" },
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
