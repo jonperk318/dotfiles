@@ -30,7 +30,6 @@ return {
                 "pyright",
                 "eslint",
                 "ts_ls",
-                "volar",
                 "html",
                 "tailwindcss",
                 "clangd",
