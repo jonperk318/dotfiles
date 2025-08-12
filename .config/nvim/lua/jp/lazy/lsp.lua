@@ -33,6 +33,7 @@ return {
                 "html",
                 "tailwindcss",
                 "clangd",
+                "rust_analyzer",
             },
             automatic_enable = true, -- Mason-LSPConfig v2 auto-enables servers by default
         })
