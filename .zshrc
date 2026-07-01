@@ -76,7 +76,8 @@ plugins=(
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-	zsh-autocomplete
+	# zsh-autocomplete disabled: known to cause intermittent shell freezes / broken widgets
+	# zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
