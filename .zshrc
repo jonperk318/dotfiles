@@ -120,6 +120,7 @@ alias n='npm'
 alias pn='pnpm'
 alias g='git'
 alias d='docker'
+alias gs='git status'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
